@@ -11,11 +11,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site using Surge
+    - name: Install NodeJs
       uses: actions/setup-node@v2-beta
       with:
-        node-version:'12'
+        node-version: 12
     - name: Setup_Surge
       run: npm install --global surge
     - name: Execute Deployment with Surge
-      run: surge ./Bootcamp2020_Bilal.surge.sh --token ${{secrtes.SURGE_TOKEN_BOOTCAMP}}
+      run: surge ./ Bootcamp2020_Bilal.surge.sh --token ${{secrets.SURGE_TOKEN_BOOTCAMP}}
